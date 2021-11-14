@@ -14,7 +14,7 @@ const PokemonDetail = (props) => {
   const [catchingPokemon, setCatchingPokemon] = useState(null);
 
   const postData = async (name) => {
-    const url = "https://mypokemon-api.herokuapp.com/api/myPokemon";
+    const url = "https://pokemonapis.herokuapp.com/";
 
     await fetch(url, {
       method: "POST",

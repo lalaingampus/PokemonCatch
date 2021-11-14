@@ -14,7 +14,7 @@ const MyPokemonList = () => {
   const [catchingPokemon, setCatchingPokemon] = useState(null);
 
   const getData = async () => {
-    const url = "https://mypokemon-api.herokuapp.com/api/myPokemon";
+    const url = "https://pokemonapis.herokuapp.com/";
     await fetch(url, {
       method: "GET",
       headers: {
@@ -42,7 +42,7 @@ const MyPokemonList = () => {
   };
 
   const postData = async (name) => {
-    const url = "https://mypokemon-api.herokuapp.com/api/myPokemon";
+    const url = "https://pokemonapis.herokuapp.com/";
 
     await fetch(url, {
       method: "POST",
@@ -87,13 +87,13 @@ const MyPokemonList = () => {
       }
     } else {
       alert("Try Again", {
-        title: "Fokemon run away!",
+        title: "Pokemon run away!",
       });
     }
   };
 
   const deleteData = async (id) => {
-    const url = `https://mypokemon-api.herokuapp.com/api/myPokemon/${id}`;
+    const url = `https://pokemonapis.herokuapp.com/${id}`;
 
     await fetch(url, {
       method: "DELETE",
