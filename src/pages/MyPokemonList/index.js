@@ -9,7 +9,7 @@ import { Spacer } from "../../components";
 import { Col } from "reactstrap";
 
 const MyPokemonList = () => {
-  const [loading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [myPokemonList, setMyPokemonList] = useState(null);
   const [catchingPokemon, setCatchingPokemon] = useState(null);
 
@@ -73,7 +73,7 @@ const MyPokemonList = () => {
     setCatchingPokemon(Math.random() < 0.5);
 
     if (catchingPokemon === true) {
-      let names = myPokemonList?.map((a) => a.name);
+      let names = myPokemonList.map((a) => a.name);
       let pokemonName = prompt("You got a pokemon, give him a name!");
       let nickname = "";
       if (names.indexOf(nickname) === -1) {
@@ -182,7 +182,7 @@ const MyPokemonList = () => {
           backgroundColor: Color.lightGrey,
         }}
       >
-        {!loading ? (
+        {!isLoading ? (
           <div
             style={{
               display: "flex",
@@ -191,7 +191,7 @@ const MyPokemonList = () => {
               justifyContent: "flex-start",
             }}
           >
-            {myPokemonList.length > 1 ? (
+            {/* {myPokemonList.length > 0 ? (
               myPokemonList?.map((pokemon, idx) => (
                 <Col sm="3" lg="5" md="4" key={idx}>
                   <MyPokemonCard
@@ -212,7 +212,7 @@ const MyPokemonList = () => {
               >
                 <p>Kamu belum punya pokemon, yuk cari</p>
               </div>
-            )}
+            )} */}
           </div>
         ) : (
           <div
