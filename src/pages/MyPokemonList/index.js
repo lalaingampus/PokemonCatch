@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Header, MyPokemonCard } from "../../templates";
-import Swal from "sweetalert2";
-import Lottie from "react-lottie";
-import pikacu from "../../assets/animations/pikachu.json";
+import React, { useState } from "react";
+import { Header } from "../../templates";
+// import Swal from "sweetalert2";
+// import Lottie from "react-lottie";
+// import pikacu from "../../assets/animations/pikachu.json";
 import { Color } from "../../utils/Color";
 import { child } from "../../assets";
 import { Spacer } from "../../components";
-import { Col } from "reactstrap";
+// import { Col } from "reactstrap";
 
 const MyPokemonList = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [setIsLoading] = useState(true);
   const [myPokemonList, setMyPokemonList] = useState(null);
   const [catchingPokemon, setCatchingPokemon] = useState(null);
 
@@ -92,61 +92,61 @@ const MyPokemonList = () => {
     }
   };
 
-  const deleteData = async (id) => {
-    const url = `https://pokemonapis.herokuapp.com/${id}`;
+  // const deleteData = async (id) => {
+  //   const url = `https://pokemonapis.herokuapp.com/${id}`;
 
-    await fetch(url, {
-      method: "DELETE",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.status)
-      .then((res) => {
-        if (res === 200) {
-          setIsLoading(false);
-          getData();
-        } else {
-          setIsLoading(false);
-        }
-      })
-      .catch((error) => {
-        console.log("Error:", error);
-        setIsLoading(false);
-      });
-  };
+  //   await fetch(url, {
+  //     method: "DELETE",
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((response) => response.status)
+  //     .then((res) => {
+  //       if (res === 200) {
+  //         setIsLoading(false);
+  //         getData();
+  //       } else {
+  //         setIsLoading(false);
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error:", error);
+  //       setIsLoading(false);
+  //     });
+  // };
 
-  const deletePokemon = async (id, e) => {
-    e.preventDefault();
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        deleteData(id);
-        Swal.fire("Deleted!", "Your Pokemon has been deleted.", "success");
-      }
-    });
-  };
+  // const deletePokemon = async (id, e) => {
+  //   e.preventDefault();
+  //   Swal.fire({
+  //     title: "Are you sure?",
+  //     text: "You won't be able to revert this!",
+  //     icon: "warning",
+  //     showCancelButton: true,
+  //     confirmButtonColor: "#3085d6",
+  //     cancelButtonColor: "#d33",
+  //     confirmButtonText: "Yes, delete it!",
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       deleteData(id);
+  //       Swal.fire("Deleted!", "Your Pokemon has been deleted.", "success");
+  //     }
+  //   });
+  // };
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: pikacu,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+  // const defaultOptions = {
+  //   loop: true,
+  //   autoplay: true,
+  //   animationData: pikacu,
+  //   rendererSettings: {
+  //     preserveAspectRatio: "xMidYMid slice",
+  //   },
+  // };
   return (
     <div
       style={{
@@ -182,7 +182,7 @@ const MyPokemonList = () => {
           backgroundColor: Color.lightGrey,
         }}
       >
-        {!isLoading ? (
+        {/* {!isLoading ? (
           <div
             style={{
               display: "flex",
@@ -191,7 +191,7 @@ const MyPokemonList = () => {
               justifyContent: "flex-start",
             }}
           >
-            {/* {myPokemonList.length > 0 ? (
+            {myPokemonList.length > 0 ? (
               myPokemonList?.map((pokemon, idx) => (
                 <Col sm="3" lg="5" md="4" key={idx}>
                   <MyPokemonCard
@@ -212,7 +212,7 @@ const MyPokemonList = () => {
               >
                 <p>Kamu belum punya pokemon, yuk cari</p>
               </div>
-            )} */}
+            )}
           </div>
         ) : (
           <div
@@ -227,7 +227,7 @@ const MyPokemonList = () => {
             <Lottie options={defaultOptions} height={250} width={250} />
             <p>Loading...</p>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
