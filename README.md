@@ -12,7 +12,4 @@ Show a picture of the Pokemon with its basic info, moves and base states. At the
 Show a list (like Pokemon List page, but with each of their nicknames as well). It also be possible to remove/release a Pokemon from the list on this page. 
 
 
-## Data Source
-This project using GraphQL <a href="https://graphql-pokeapi.vercel.app" target="_blank">(graphql-pokeapi)</a> as a list pokemon that shown at Pokemon List Page, and for My Pokemon List, I created an API using NodeJs, Express and MongoDB. I also deployed it using HerokuApp, for resource you can visit my Github for <a href="https://github.com/amalianrlt/pokemonApi" target="_blank">My Pokemon API</a>
 
-You can visit Pokedex site at <a href="https://pokedex.amalianurlita.com" target="_blank">Pokedex</p>

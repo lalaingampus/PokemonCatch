@@ -10,11 +10,11 @@ import { toUpperCase } from "../../utils/upperCase";
 import { Color } from "../../utils/Color";
 
 const PokemonDetail = (props) => {
-  const [setIsLoading] = useState(true);
+  const [ , setIsLoading] = useState(true);
   const [catchingPokemon, setCatchingPokemon] = useState(null);
 
   const postData = async (name) => {
-    const url = "https://pokemonapis.herokuapp.com/";
+    const url = "/api/myPokemon";
 
     await fetch(url, {
       method: "POST",
